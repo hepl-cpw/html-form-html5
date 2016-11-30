@@ -1,0 +1,22 @@
+html{
+	background: url("../img/congruent_pentagon.png");
+}
+body{
+	width: 50%;
+	margin: 0 auto;
+	background: white;
+	padding: 1% 5%;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	line-height: 1.5;
+	-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
+}
+code{
+	font-family: Monaco, Consolas, "Lucida Console", monospace;
+	font-size: 0.9em;
+	background-color: #eee;
+	padding:0.05em;
+	border: 1px solid #ccc;
+	border-radius: 0.25em;
+}

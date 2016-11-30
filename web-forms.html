@@ -1,0 +1,264 @@
+<!--
+Ressource à lire dont sont inspirés ces exercices : tutoriel d’Alsacréations
+« Formulaires HTML5 : nouveaux types de champs »
+http://www.alsacreations.com/tuto/lire/1372-formulaires-html5-nouveaux-types-champs-input.html
+-->
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Les nouveaux champs de formulaire en HTML5
+		</title>
+		<meta name="author" content="François Parmentier">
+		<link rel="stylesheet" href="css/style.css">
+		<!--[if lt IE 9]>
+	      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<h1 role="heading" aria-level="1">
+			Les nouveaux champs de formulaire en HTML5
+		</h1>
+		<article id="input">
+			<h2 role="heading" aria-level="2">
+				<code>&lt;input&gt;</code> et ses variantes
+			</h2>
+			<section id="tel">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>tel</code>
+				</h3>
+				<p>
+					Il s’agit d’une déclinaison d’un champ de type text. 
+				</p>
+				<p>
+					Aucun format spécifique n’est attendu par le navigateur. Il n’y a donc pas de pattern précis qui vérifirait si au moins un chiffre est renseigné.
+				</p>
+				<p>
+					Cependant, sur certains navigateurs de SmartPhone, comme sur Safari pour iOS par exemple, l’entrée du numéro de téléphone est facilitée par le basculement à un clavier de type numérique.	
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+			</section> <!-- #tel -->
+			<hr>
+			<section id="url">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>url</code>
+				</h3>
+				<p>
+					En apparence, ce champ ressemble à celui de type text.
+				</p>
+				<p>	
+					Cependant, le navigateur attend cette fois un format bien spécifique devant respecter un pattern de type <abbr title="Uniform Resource Locator">URL</abbr>. Tous les types d’<abbr title="Uniform Resource Locator">URL</abbr> sont admis <kbd>(ftp://</kbd>, <kbd>mailto:</kbd>, <kbd>http://</kbd>, etc.).
+				</p>
+				<p>
+					Par défaut, sur Opera, lorsque vous ne spécifiez pas le type de protocole, le navigateur ajoute automatiquement le type <kbd>http://</kbd>, ce qui valide forcément le format attendu pour ce champ.
+				</p>
+				<p>
+					À l’instar du type tel, le type url permet à un SmartPhone compatible d’afficher un clavier proposant les caractères courants d’une <abbr title="Uniform Resource Locator">URL</abbr>.	
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+			</section><!-- #url -->
+			<hr>
+			<section id="email">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>email</code>
+				</h3>
+				<p>
+					Toujours très proche du type <code>text</code>, ce champ est équivalent au type url, seul le format attendu change.
+				</p>
+				<p>
+					Ce champ attend au minium un caractère (caractère non accentué comprenant les séparateurs tiret ou underscore) suivi d’un <kbd>@</kbd> suivi à son tour d’un caractère.
+				</p>
+				<ul>
+					<li>
+						Exemple d’<span style="color:#f9b61c;"><strong>entrée invalide</strong></span> : <kbd>é@ç</kbd>	
+					</li>
+					<li>
+						Exemples d’<span style="color:#adca48;"><strong>entrées valides</strong></span> : <kbd>-@_</kbd> , <kbd>f@r</kbd>
+					</li>
+				</ul>
+				<form>
+					<!-- à compléter -->
+				</form>
+			</section><!-- #email -->
+			<hr>
+			<section id="search">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>search</code>
+				</h3>
+				<p>
+					Ce type de champ est interprété différemment en fonction des navigateurs. Seul Webkit lui confère des fonctions supplémentaires par rapport au champ text classique.
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+			</section> <!-- #search -->
+			<hr>
+			<section id="date-time-datetime">
+				<h3 role="heading" aria-level="3">
+					Champ de types <code>date</code>, <code>time</code> et <code>datetime</code>
+				</h3>
+				<section id="date">
+					<h4>
+						Champ de type <code>date</code>
+					</h4>
+					<p>
+						Ce champ visuellement proche de celui de type <code>text</code> vous permet d’activer une aide au remplissage (type <i>datepicker</i>) présente uniquement sur quelques navigateurs et différente de l’un à l’autre.
+					</p>
+					<p>
+						Le contenu attendu est une date du calendrier Grégorien au <a href="http://dev.w3.org/html5/markup/references.html#refsRFC3339">format RFC3339</a> sans précision de la <i>timezone</i>, mais le champ accepte un contenu vide ou mal formaté sans retourner d’erreur.
+					</p>
+					<p>
+						La liste des attributs compatibles est la suivante&nbsp;: <code>name</code>, <code>disabled</code>, <code>form</code>, <code>type</code>, <code>autocomplete</code>, <code>autofocus</code>, <code>list</code>, <code>min</code>, <code>max</code>, <code>step</code> (chiffre entier), <code>readonly</code>, <code>required</code>, <code>value</code>, <code>pattern</code> ainsi que les <a href="http://dev.w3.org/html5/markup/global-attributes.html#common.attrs.xml">attributs classiques, d’événements et xml</a>.
+					</p>
+					<form>
+						<!-- à compléter -->
+					</form>
+				</section> <!-- #date -->
+				<section id="time">
+					<h4>
+						Champ de type <code>time</code>
+					</h4>
+					<p>
+						Ce type de champ permet de renseigner une heure, avec plus ou moins de précision.
+					</p>
+					<p>
+						Le format attendu est le même que pour le champ de type <code>date</code>, sans localisation (<i>timezone</i>).
+					</p>
+					<p>
+						La liste des attributs compatibles est très proche, seul l’attribut <code>step</code> autorise ici un nombre à virgule (<i>float</i>).
+					</p>
+					<p>
+						À l’instar du champ de type <code>date</code>, ce type de champ déclenche l’affichage d’une sorte de sélecteur permettant d’incrémenter ou décrémenter la valeur du champ minute par minute. On peut rencontrer ce comportement sur Safari et Opera sous la forme suivante.
+					</p>
+					<p>
+						Les valeurs renvoyées par ce type de champ de formulaire sont différentes selon le navigateur. Là où Opera est très précis (renvoie une valeur jusqu’au centième de seconde, ex : <code>13:37:01.00</code>), Safari (desktop et mobile) se contentera du contenu affiché dans le champ (ex :<code>13:37</code>).
+					</p>
+					<p>
+						Ce type de champ permet également aux smartphones compatibles d’afficher un module avancé basé sur le format attendu.
+					</p>
+					<form>
+						<!-- à compléter -->
+					</form>
+				</section> <!--  #time -->
+				<section id="datetime">
+					<h4>
+						Champ de type <code>datetime</code>
+					</h4>
+					<p>
+						Ce type de champ est une combinaison des deux type <code>date</code> et <code>time</code>. Il permet donc de renseigner une date et une heure précise dans un même champ (visuel), dans le cas de Safari, et dans deux champs séparés dans le cas d’Opera. <code>datetime </code>propose un timezone qui est précisé en dehors des champs sous Opera, et directement intégré au champ dans Safari (&laquo;Z&raquo; équivaut ici à &laquo;UTC&raquo;).
+					</p>
+					<form>
+						<!-- à compléter -->
+					</form>
+				</section> <!-- #datetime -->
+			</section> <!-- #date-time-datetime -->
+			<hr>
+			<!-- input directement dans le form // plus obligé la valeur checked/checked -->
+			<section id="month-week">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>month</code> et <code>week</code>
+				</h3>	
+				<section id="month">
+					<h4>
+						Champ de type <code>month</code>
+					</h4>
+					<p>
+						Le type de champ <code>month</code> permet de renseigner un mois dans une année. Il attend donc un format proche du type <code>date</code> duquel on retire l’information sur le jour. La liste des attributs compatibles reste la même que pour le type <code>date</code>. Le format attendu correspond à cette syntaxe : <code>aaaa-mm</code> (ex: <code>2012-01</code>).
+					</p>
+					<form>
+						<!-- à compléter -->
+					</form>
+				</section> <!-- #month -->
+				<section id="week">
+					<h4>
+						Champ de type <code>week</code>
+					</h4>
+					<p>
+						Le type de champ <code>week</code> permet de renseigner une semaine dans une année. Il attend donc un format de type <code>2012W05</code> qui correspond à l’année et au numéro de semaine dans celle-ci. La liste des attributs compatibles reste la même que pour le type <code>date</code>.
+					</p>
+					<form>
+						<!-- à compléter -->
+					</form>
+				</section> <!-- #week -->
+			</section> <!-- #month-week -->
+			<hr>
+			<section id="number">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>number</code>
+				</h3>
+				<p>
+					Le type de champ <code>number</code> permet de renseigner une valeur numérique. 
+				</p>
+				<p>
+					Le champ de formulaire est alors transformé en une sorte de boite permettant l’incrémentation et la décrémentation d’une valeur numérique initiale (0 par défaut), lorsque la prise en charge par le navigateur est complète.
+				</p>
+				<p>
+					Lorsque ce type de champ est pris en charge par le navigateur, celui-ci renvoie la valeur numérique renseignée dans ce champ. Si un autre type de contenu est renseigné, aucune valeur n’est retournée à la soumission du formulaire.
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+				<section id="step">
+					<h4>
+						L’attribut <code>step</code>
+					</h4>
+					<p>
+						Cet attribut permet de définir le pas de l’incrémentation. Faites le test avec une incrémentation et décrémentation de 4 en 4, les valeurs négatives étant admises.
+					</p>
+					<form>
+						<!-- à compléter -->
+					</form>
+				</section> <!-- #step -->
+				<section id="min-max">
+					<h4>
+						Les attributs <code>min</code> et <code>max</code>
+					</h4>
+					<p>
+						Ces deux attributs permettent de limiter le nombre dans un intervalle défini.
+					</p>
+				</section> <!-- #min-max -->
+			</section> <!-- #number -->
+			<hr>
+			<section id="range">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>range</code>
+				</h3>
+				<p>
+					Ce champ propose un contenu évalué approximatif. Bien que l’on puisse convertir la position du curseur numériquement (par défaut la valeur la plus basse est 0, la plus haute 100), l’utilisateur n’a pas de repère numérique, seule la position du curseur est un indice. La valeur la plus haute se trouve à gauche (il fallait le deviner ?) pour un sens de lecture <code>ltr</code> (left to right) bien entendu ! Si vous avez l’habitude de passer d’une lecture <code>rtl</code> à <code>ltr</code> de par votre polyglottisme, cet affichage approximatif pourrait vous poser des soucis (cela reste une supposition), d’autant plus que le curseur se place par défaut au milieu.
+				</p>
+				<p>
+					Ce type de champ retourne une valeur numérique qui correspond à la position du curseur.
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+				<p>
+					Si vous ne renseignez rien dans les attributs <code>min </code>et <code>max</code>, et que le curseur de <code>range </code>se trouve au centre (il s’y trouve en valeur initiale au chargement de l’élément), la valeur retournée sera 50 (valeur médiane de l’intervalle 0-100).
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+			</section> <!-- #range -->
+			<hr>
+			<section id="color">
+				<h3 role="heading" aria-level="3">
+					Champ de type <code>color</code>
+				</h3>
+				<p>
+					Ce type permet de transformer le champ pour sélectionner un code couleur dans une palette.&nbsp;La valeur attendue est une couleur au format héxadécimal (un dièse suivi de 6 caractères alpha-numériques compris entre A et F, et 0 et 9).
+				</p>
+				<p>
+					Actuellement Opera 11+ et Chrome 20+ permettent l’affichage de cette palette, personnalisée ou native (celle intégrée au système d’exploitation).&nbsp;Les autres navigateurs affichent un simple champ de type texte, il n’est <strong>pas possible</strong> de prévoir un <code>pattern</code> contrôlant la valeur renseignée par l’utilisateur, puisque cet attribut n’est pas compatible avec ce type.
+				</p>
+				<form>
+					<!-- à compléter -->
+				</form>
+			</section> <!-- #color -->
+		</article> <!-- #input -->
+	</body>
+</html>
